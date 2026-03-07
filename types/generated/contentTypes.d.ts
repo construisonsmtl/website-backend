@@ -1279,6 +1279,40 @@ export interface ApiPolicyPolicy extends Schema.CollectionType {
       'manyToOne',
       'api::policy-category.policy-category'
     >;
+    isMunicipal: Attribute.Boolean &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }> &
+      Attribute.DefaultTo<false>;
+    isProvincial: Attribute.Boolean &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }> &
+      Attribute.DefaultTo<false>;
+    isFederal: Attribute.Boolean &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }> &
+      Attribute.DefaultTo<false>;
+    identifier: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    isVisible: Attribute.Boolean &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }> &
+      Attribute.DefaultTo<true>;
     grade: Attribute.Enumeration<['bronze', 'silver', 'gold']> &
       Attribute.Required &
       Attribute.SetPluginOptions<{

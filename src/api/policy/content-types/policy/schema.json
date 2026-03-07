@@ -98,6 +98,14 @@
       "type": "boolean",
       "default": true
     },
+    "links": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "json"
+    },
     "grade": {
       "pluginOptions": {
         "i18n": {

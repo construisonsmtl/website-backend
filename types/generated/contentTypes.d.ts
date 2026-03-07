@@ -1313,6 +1313,12 @@ export interface ApiPolicyPolicy extends Schema.CollectionType {
         };
       }> &
       Attribute.DefaultTo<true>;
+    links: Attribute.JSON &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
     grade: Attribute.Enumeration<['bronze', 'silver', 'gold']> &
       Attribute.Required &
       Attribute.SetPluginOptions<{

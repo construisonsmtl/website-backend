@@ -28,6 +28,12 @@
       "target": "api::political-party.political-party",
       "inversedBy": "policy_supports"
     },
+    "election": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::election.election",
+      "inversedBy": "policy_supports"
+    },
     "quote": {
       "pluginOptions": {
         "i18n": {

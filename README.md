@@ -20,3 +20,12 @@ npm run develop
 If you need a sample database, please ask in the `#website` channel on our [Discord community server](https://discord.com/invite/X2bsk7a2qA)
 
 The admin panel should be accessible at this address: [localhost:1337/admin](localhost:1337/admin)
+
+
+### Export backend
+
+1. Install railway cli
+2. go into railway and copy ssh command
+3. Inside /app, `npm run strapi export`
+4. railway service files download /app/export_20260912014658.tar.gz.enc ./export.tar.gz.enc
+5. `cd website-backend && npm run strapi import -- --file ./export.tar.gz.enc`

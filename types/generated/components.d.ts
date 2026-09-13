@@ -1,13 +1,14 @@
-import type { Schema, Attribute } from '@strapi/strapi';
+import type { Attribute, Schema } from '@strapi/strapi';
 
 export interface CityPolicyAnswerPolicyAnswer extends Schema.Component {
   collectionName: 'components_city_policy_answer_policy_answers';
   info: {
+    description: '';
     displayName: 'Policy Answer';
     icon: 'quote';
-    description: '';
   };
   attributes: {
+    answer: Attribute.RichText;
     city: Attribute.Enumeration<
       [
         'Blainville',
@@ -53,27 +54,26 @@ export interface CityPolicyAnswerPolicyAnswer extends Schema.Component {
       ]
     > &
       Attribute.Required;
-    answer: Attribute.RichText;
   };
 }
 
 export interface PresentationKeyPoint extends Schema.Component {
   collectionName: 'components_presentation_key_points';
   info: {
+    description: '';
     displayName: 'Key Point';
     icon: 'arrow-circle-right';
-    description: '';
   };
   attributes: {
-    icon: Attribute.Media;
-    title: Attribute.String & Attribute.Required;
+    color: Attribute.Enumeration<['gray', 'blue', 'red', 'green', 'indigo']> &
+      Attribute.Required &
+      Attribute.DefaultTo<'gray'>;
     content: Attribute.RichText &
       Attribute.SetMinMaxLength<{
         maxLength: 500;
       }>;
-    color: Attribute.Enumeration<['gray', 'blue', 'red', 'green', 'indigo']> &
-      Attribute.Required &
-      Attribute.DefaultTo<'gray'>;
+    icon: Attribute.Media<'images'>;
+    title: Attribute.String & Attribute.Required;
   };
 }
 
